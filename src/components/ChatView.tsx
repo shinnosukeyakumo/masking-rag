@@ -165,21 +165,6 @@ export function ChatView({ userRole }: ChatViewProps) {
               <p style={styles.welcomeSubtitle}>
                 社内ドキュメントについて、なんでも質問してください
               </p>
-              <div style={styles.exampleGrid}>
-                {[
-                  '営業部のメンバーを教えて',
-                  'プロジェクトの予算を教えて',
-                  '人事部の取り組みは？',
-                ].map((ex) => (
-                  <button
-                    key={ex}
-                    onClick={() => setInput(ex)}
-                    style={styles.exampleChip}
-                  >
-                    {ex}
-                  </button>
-                ))}
-              </div>
             </div>
           )}
 
@@ -347,19 +332,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   welcomeIcon: { fontSize: 56, marginBottom: 16 },
   welcomeTitle: { margin: 0, fontSize: 22, color: '#1e293b' },
-  welcomeSubtitle: { margin: '8px 0 28px', color: '#64748b', fontSize: 14 },
-  exampleGrid: { display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' },
-  exampleChip: {
-    background: '#fff',
-    border: '1px solid #e2e8f0',
-    borderRadius: 999,
-    padding: '8px 16px',
-    fontSize: 13,
-    color: '#475569',
-    cursor: 'pointer',
-    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
-    transition: 'all 0.2s',
-  },
+  welcomeSubtitle: { margin: '8px 0 0', color: '#64748b', fontSize: 14 },
   userWrap: { display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end', gap: 8 },
   userBubble: {
     background: 'linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)',
