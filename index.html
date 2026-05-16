@@ -6,8 +6,52 @@
     <title>社内情報検索 RAG</title>
     <style>
       * { box-sizing: border-box; margin: 0; padding: 0; }
-      body { background: #f1f5f9; }
+      html, body { height: 100%; }
+      body {
+        background: linear-gradient(135deg, #eef2ff 0%, #f0f9ff 50%, #ecfeff 100%);
+        font-family: "Hiragino Sans", "Yu Gothic UI", system-ui, sans-serif;
+        color: #1e293b;
+        -webkit-font-smoothing: antialiased;
+      }
       @keyframes blink { 50% { opacity: 0; } }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50%      { opacity: 0.4; transform: scale(0.8); }
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(4px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes slideInLeft {
+        from { opacity: 0; transform: translateX(-12px); }
+        to   { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes slideInRight {
+        from { opacity: 0; transform: translateX(12px); }
+        to   { opacity: 1; transform: translateX(0); }
+      }
+      /* スクロールバーをやや控えめに */
+      *::-webkit-scrollbar { width: 8px; }
+      *::-webkit-scrollbar-track { background: transparent; }
+      *::-webkit-scrollbar-thumb {
+        background: rgba(100, 116, 139, 0.2);
+        border-radius: 999px;
+      }
+      *::-webkit-scrollbar-thumb:hover {
+        background: rgba(100, 116, 139, 0.4);
+      }
+      /* Amplify Authenticator のスタイルをカスタマイズ */
+      [data-amplify-authenticator] {
+        --amplify-colors-brand-primary-60: #6366f1;
+        --amplify-colors-brand-primary-80: #4f46e5;
+        --amplify-colors-brand-primary-90: #4338ca;
+        --amplify-colors-brand-primary-100: #3730a3;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     </style>
   </head>
   <body>

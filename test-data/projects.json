@@ -1,0 +1,31 @@
+{
+  "projects": [
+    {
+      "id": "P001",
+      "name": "新規ECサイト構築",
+      "lead": "佐藤健一",
+      "lead_contact": "sato@example.com",
+      "lead_phone": "070-1111-2222",
+      "budget": 30000000,
+      "status": "進行中"
+    },
+    {
+      "id": "P002",
+      "name": "営業支援システム刷新",
+      "lead": "山田太郎",
+      "lead_contact": "yamada@example.com",
+      "lead_phone": "090-1234-5678",
+      "budget": 15000000,
+      "status": "計画中"
+    },
+    {
+      "id": "P003",
+      "name": "人事評価システム導入",
+      "lead": "鈴木花子",
+      "lead_contact": "suzuki@example.com",
+      "lead_phone": "080-9876-5432",
+      "budget": 8000000,
+      "status": "完了"
+    }
+  ]
+}

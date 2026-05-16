@@ -79,6 +79,10 @@ export class AgentRuntimeConstruct extends Construct {
         AWS_DEFAULT_REGION: cdk.Aws.REGION,
       },
       tracingEnabled: true,
+      requestHeaderConfiguration: {
+        // 認証ヘッダーを agent コード側で読めるようにする
+        allowlistedHeaders: ['Authorization'],
+      },
     });
 
     new cdk.CfnOutput(this, 'AgentRuntimeArn', {

@@ -7,17 +7,18 @@ REGION="us-west-2"
 
 echo "[$STACK_NAME] の出力を取得中..."
 
-get_output() {
+# ExportName で取得（CDK が付与するランダムサフィックスに依存しない）
+get_by_export() {
   aws cloudformation describe-stacks \
     --stack-name "$STACK_NAME" \
     --region "$REGION" \
-    --query "Stacks[0].Outputs[?OutputKey=='$1'].OutputValue" \
+    --query "Stacks[0].Outputs[?ExportName=='$1'].OutputValue" \
     --output text
 }
 
-USER_POOL_ID=$(get_output "AuthUserPoolId")
-USER_POOL_CLIENT_ID=$(get_output "AuthUserPoolClientId")
-AGENT_ARN=$(get_output "AgentRuntimeAgentRuntimeArn6932C03A")
+USER_POOL_ID=$(get_by_export "RagMaskingUserPoolId")
+USER_POOL_CLIENT_ID=$(get_by_export "RagMaskingUserPoolClientId")
+AGENT_ARN=$(get_by_export "RagMaskingAgentRuntimeArn")
 
 cat > .env <<EOF
 VITE_USER_POOL_ID=${USER_POOL_ID}
