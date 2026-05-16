@@ -1,0 +1,34 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# 環境変数（CognitoのIDなど機密情報を含む）
+.env
+.env.local
+.env.*.local
+
+# Vite ビルド成果物
+dist/
+dist-ssr/
+*.local
+
+# Amplify
+.amplify/
+amplify_outputs*
+amplifyconfiguration*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Python (Lambda)
+__pycache__/
+*.pyc
+.pytest_cache/
